@@ -1,0 +1,9 @@
+.git
+.idea
+.dockerignore
+Dockerfile_Httpd
+Dockerfile_Node
+package-lock.json
+composer.lock
+node_modules
+vendor

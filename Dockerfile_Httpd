@@ -1,0 +1,19 @@
+FROM php:8.0-apache
+LABEL authors=${DOCKER_AUTHOR}
+
+RUN apt-get update -y
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
+RUN apt-get install -y nodejs zip unzip
+RUN docker-php-ext-install pdo pdo_mysql bcmath
+
+WORKDIR /var/www/html
+
+COPY . .
+COPY docker/php/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY --from=composer:2.5.7 /usr/bin/composer /usr/bin/composer
+
+RUN chown -R www-data:www-data /var/www/html && chmod -R 777 /var/www/html/var
+
+RUN a2enmod rewrite
+
+ENTRYPOINT ["docker/php/entrypoint.sh"]
