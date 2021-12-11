@@ -1,0 +1,22 @@
+<nav>
+    <div class="wrap">
+        <a href="/" class="logo"></a>
+        <ul class="menu">
+            <li>
+                <a href="{{ path('app_panel_flashlight') }}">ZGŁOSZENIA PO LATARKĘ</a>
+            </li>
+            <li>
+                <a href="{{ path('app_panel_trip') }}">ZGŁOSZENIA PO WYJAZD</a>
+            </li>
+            {% if is_granted('ROLE_ADMIN') %}
+            <li>
+                <a href="{{ path('app_logout') }}">WYLOGUJ</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{{ path('app_login') }}">ZALOGUJ</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

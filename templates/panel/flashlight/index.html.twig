@@ -1,0 +1,36 @@
+{% extends 'panel.html.twig' %}
+
+{% block title %}Remington - Każda Sytuacja - Panel - Zgłoszenia{% endblock %}
+
+{% block body %}
+    <section id="flashlight">
+        <div class="wrap">
+            <h2>DODANE ZGŁOSZENIA</h2>
+
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>id</td>
+                            <td>Imię</td>
+                            <td>Nazwisko</td>
+                            <td>E-mail</td>
+                            <td>Operacje</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.firstname }}</td>
+                            <td>{{ item.lastname }}</td>
+                            <td>{{ item.email }}</td>
+                            <td><a href="/panel/flashlight/remove/id,{{ item.id }}" class="remove">usuń</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}
