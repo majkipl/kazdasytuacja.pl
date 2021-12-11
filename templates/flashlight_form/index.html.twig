@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remington - Każda Sytuacja - Formularz{% endblock %}
+
+{% block body %}
+    <section class="form" id="flashlight">
+        <div class="wrap">
+            <h2>ODBIERZ LATARKĘ</h2>
+
+            <div class="row">
+                <p>Kupiłeś produkt REMINGTON objęty promocją? <strong>Zgarnij niezniszczalną latarkę VARTA!</strong>
+                    Wypełnij poniższy formularz, przyślij nam kopię paragonu wraz z wyciętym kodem kreskowym z
+                    opakowania i czekaj na gratis.</p>
+            </div>
+
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="column">
+                    <div class="element">
+                        <p>IMIĘ:</p>
+                        <p>{{ form_widget(form.firstname) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>NAZWISKO:</p>
+                        <p>{{ form_widget(form.lastname) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>E-MAIL:</p>
+                        <p>{{ form_widget(form.email) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>ULICA I NR:</p>
+                        <p>{{ form_widget(form.street) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>MIASTO:</p>
+                        <p>{{ form_widget(form.city) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>KOD POCZTOWY:</p>
+                        <p>{{ form_widget(form.code) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>DATA URODZENIA:</p>
+                        <p>{{ form_widget(form.birth, {'attr': {'class': 'datapicker',
+                                'data-beatpicker': true,
+                                'data-beatpicker-id': 'myDatePicker',
+                                'data-beatpicker-format': "['DD','MM','YYYY'],separator:'-'",
+                                'data-beatpicker-extra': 'customOptions'}}) }}
+                        </p>
+                        <p class="error-post"></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="element">
+                        <p>PŁEĆ:</p>
+                        <p>{{ form_widget(form.sex) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>SKĄD WIESZ O AKCJI?:</p>
+                        <p>{{ form_widget(form.where) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>NR PARAGONU:</p>
+                        <p>{{ form_widget(form.paragon) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>POTWIERDŹ NR PARAGONU:</p>
+                        <p>{{ form_widget(form._paragon) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p style="margin-top: 21px;">SKLEP:</p>
+                        <p>{{ form_widget(form.shop) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>KATEGORIA:</p>
+                        <p>{{ form_widget(form.category) }}</p>
+                        <p class="error-post"></p>
+                    </div>
+
+                    <div class="element">
+                        <p>PRODUKT:</p>
+                        <p>{{ form_widget(form.product) }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="row">
+                {{ form_row(form.legal_a, {'attr': {'hidden': 'hidden'}}) }}
+                <p class="error-post"></p>
+                {{ form_row(form.legal_b, {'attr': {'hidden': 'hidden'}}) }}
+                <p class="error-post"></p>
+                {{ form_row(form.legal_c, {'attr': {'hidden': 'hidden'}}) }}
+                <p class="error-post"></p>
+            </div>
+
+            <div class="row">
+                {{ form_widget(form._token) }}
+                <input type="submit" name="submit"/>
+                <a class="fight" href="/wygraj-wyjazd/"></a>
+            </div>
+
+            <div class="clear"></div>
+            {{ form_end(form) }}
+
+            <div class="row">
+                <p>Aby otrzymać latarkę wyślij kopię paragonu i wycięty kod kreskowy z opakowania produktu Remington na
+                    adres: Loyal Concept <strong>“PRZYGOTUJ SIĘ NA KAŻDĄ SYTUACJĘ”</strong> ul. Tużycka 8 lok.6, 03-683
+                    Warszawa. </p>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </section>
+{% endblock %}
