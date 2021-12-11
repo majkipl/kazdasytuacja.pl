@@ -1,0 +1,34 @@
+<section class="vote" id="vote">
+    <div class="wrap">
+        <div id="vote_anchor"></div>
+        <h2>ZAGŁOSUJ</h2>
+
+        <div class="row">
+            <p class="p1">Głosowanie w konkursie dobiegło końca.</p>
+            <p class="p2">Na 5 osób, które zyskają najwięcej głosów internautów, czeka 3-dniowy wyjazd survivalowy z byłymi GROM-owcami.</p>
+            <p class="p3">Oficjalne ogłoszenie wyników nastąpi 27.01.2015 r.</p>
+        </div>
+
+        <div class="row" id="players">
+            {% for item in players %}
+                <article id="post_{{ item.id }}">
+                    <img src="http://graph.facebook.com/{{ item.id }}/picture?type=large" alt="avatar" class="thumb" />
+                    <div class="content">
+                        <h4>{{ item.firstname }} {{ item.lastname }}</h4>
+                        <p>{{ item.try }}</p>
+                    </div>
+                    <div class="social">
+                        <a  target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://kazdasytuacja.pl/odpowiedz/id,{{ item.id }}" class="share"></a>
+                    </div>
+                </article>
+            {% endfor %}
+
+        </div>
+
+        <div class="row">
+            <a href="#rating" class="tobottom"></a>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</section>

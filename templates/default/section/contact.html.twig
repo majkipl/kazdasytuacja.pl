@@ -1,0 +1,43 @@
+<section class="contact" id="contact">
+    <div class="wrap">
+        <h2>KONTAKT</h2>
+
+        <div class="row contactForm">
+            {{ form_start(formContact) }}
+
+            <div class="column">
+                <div class="element">
+                    <p>IMIĘ:</p>
+                    <p>{{ form_widget(formContact.firstname) }}</p>
+                </div>
+
+                <div class="element">
+                    <p>NAZWISKO:</p>
+                    <p>{{ form_widget(formContact.lastname) }}</p>
+                </div>
+
+                <div class="element">
+                    <p>E-MAIL:</p>
+                    <p>{{ form_widget(formContact.email) }}</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="element">
+                    <p>WIADOMOŚĆ:</p>
+                    <p>{{ form_widget(formContact.message) }}</p>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="element">
+                    <div class="error-container"></div>
+                    {{ form_widget(formContact._token) }}
+                    <p><input type="submit" name="submit" /></p>
+                </div>
+            </div>
+            {{ form_end(formContact) }}
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</section>

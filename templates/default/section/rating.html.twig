@@ -1,0 +1,70 @@
+<section class="rating" id="rating">
+    <div class="wrap">
+        <h2>WYNIKI KONKURSU</h2>
+
+        <div class="row">
+            <p class="paragraph">Głosowanie zakończone!</p>
+            <p>Przedstawiamy profile pięciu szczęśliwców, którzy pojadą na wyjazd survivalowy z byłymi GROMowcami!</p>
+
+            <p>GRATULUJEMY!</p>
+        </div>
+
+        <div class="row m1-5">
+            {% if rating[0] %}
+            <div class="m1">
+                <div class="thumb" style="background-image: url('http://graph.facebook.com/{{ rating[0].id }}/picture?type=large');"></div>
+                <div class="position">
+                    <span class="m">Miejsce 1</span>
+                    <span class="name">{{ rating[0].firstname }} {{ rating[0].lastname }}</span>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if rating[1] %}
+            <div class="m2">
+                <div class="thumb" style="background-image: url('http://graph.facebook.com/{{ rating[1].id }}/picture?type=large');"></div>
+                <div class="position">
+                    <span class="m">Miejsce 2</span>
+                    <span class="name">{{ rating[1].firstname }} {{ rating[1].lastname }}</span>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if rating[2] %}
+            <div class="m3">
+                <div class="thumb" style="background-image: url('http://graph.facebook.com/{{ rating[2].id }}/picture?type=large');"></div>
+                <div class="position">
+                    <span class="m">Miejsce 3</span>
+                    <span class="name">{{ rating[2].firstname }} {{ rating[2].lastname }}</span>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if rating[3] %}
+            <div class="m4">
+                <div class="thumb" style="background-image: url('http://graph.facebook.com/{{ rating[3].id }}/picture?type=large');"></div>
+                <div class="position">
+                    <span class="m">Miejsce 4</span>
+                    <span class="name">{{ rating[3].firstname }} {{ rating[3].lastname }}</span>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if rating[4] %}
+            <div class="m5">
+                <div class="thumb" style="background-image: url('http://graph.facebook.com/{{ rating[4].id }}/picture?type=large');"></div>
+                <div class="position">
+                    <span class="m">Miejsce 5</span>
+                    <span class="name">{{ rating[4].firstname }} {{ rating[4].lastname }}</span>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="row">
+            <a href="#products" class="tobottom"></a>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</section>

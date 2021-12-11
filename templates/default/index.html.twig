@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remington - Każda Sytuacja{% endblock %}
+
+{% block body %}
+
+    <img src="{{ asset('/images/1000.png') }}" alt="flashlight" class="flashlight-fixed" />
+
+    {% include 'default/section/slider.html.twig' %}
+
+    {% include 'default/section/awards.html.twig' %}
+
+    {%  include 'default/section/take.html.twig' %}
+
+    {%  include 'default/section/vote.html.twig' %}
+
+    <section id="trigger1" class="spacer s0"></section>
+
+    {% include 'default/section/lax-one.html.twig' %}
+
+    {% include 'default/section/rating.html.twig' %}
+
+    <section id="trigger3" class="spacer s0"></section>
+
+    {% include 'default/section/lax-two.html.twig' %}
+
+    {% include 'default/section/products.html.twig' %}
+
+    {% include 'default/section/about.html.twig' %}
+
+    {% include 'default/section/contact.html.twig' %}
+
+{% endblock %}
