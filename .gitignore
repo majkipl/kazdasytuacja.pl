@@ -274,6 +274,7 @@ fabric.properties
 # Build data
 /build/
 /public/build/
+/public/uploads/*
 
 # Composer PHAR
 /composer.phar
