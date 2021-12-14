@@ -2,6 +2,18 @@
 
 Well hi there! This repository holds the code and script.
 
+## Docker
+
+Open a terminal or command prompt and go to the root of the Symfony application.
+
+Run the following command in the terminal:
+
+```
+docker-compose up -d
+```
+
+Docker will build the container from the Dockerfile and docker-compose.yml files and run the Symfony application in the container.
+
 ## Setup
 
 If you've just downloaded the code, congratulations!!
